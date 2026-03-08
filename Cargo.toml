@@ -4,3 +4,33 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+# AES block cipher (RustCrypto ecosystem)
+aes = "0.8"
+
+# PBKDF2 key derivation
+pbkdf2 = "0.12"
+
+# HMAC
+hmac = "0.12"
+
+# Hash functions for PBKDF2 PRFs — all 5 that VeraCrypt supports
+sha2 = "0.10"
+ripemd = "0.1"
+whirlpool = "0.10"
+streebog = "0.10"
+
+# CRC32 for header checksum verification
+crc32fast = "1"
+
+# exFAT filesystem reader
+exfat-fs = "0.1"
+
+# NTFS filesystem reader
+ntfs = "0.4"
+
+# Password input without echo
+rpassword = "7"
+
+# Terminal UI for the file browser
+ratatui = "0.29"
+crossterm = "0.28"
