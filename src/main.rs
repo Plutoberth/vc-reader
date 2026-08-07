@@ -37,8 +37,6 @@ fn main() {
     println!("  Sector size       : {} bytes", vol.sector_size());
 
     println!();
-    println!("Volume key (data)  : {}", hex_bytes(&vol.master_key()[..32]));
-    println!("Volume key (tweak) : {}", hex_bytes(&vol.master_key()[32..64]));
 
     // Detect the filesystem before mounting it.
     let kind = fs::detect(&mut vol).unwrap_or_else(|e| {
@@ -65,8 +63,4 @@ fn main() {
         eprintln!("Browser error: {e}");
         std::process::exit(1);
     }
-}
-
-fn hex_bytes(bytes: &[u8]) -> String {
-    bytes.iter().map(|b| format!("{b:02x}")).collect::<Vec<_>>().join(" ")
 }
